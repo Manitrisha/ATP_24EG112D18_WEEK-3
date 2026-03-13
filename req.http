@@ -1,0 +1,107 @@
+##read all users
+GET http://localhost:4000/user-api/users
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhaXNoQGdtYWlsLmNvbSIsImlhdCI6MTc3MzI5NjM1MywiZXhwIjoxNzczMjk4MzUzfQ.72cg-b4aT5p_rBOinwKvj4pn3HlKonsc1NZt2Tvw2qs; Path=/; HttpOnly; SameSite=Lax
+
+### read the user by id
+GET http://localhost:4000/user-api/users/69aa6804a43d2c8568a9481f
+
+###  //TO SEPERATE THE REQUEST
+### //THEIR should be no space b/w post/put and content type
+POST http://localhost:4000/user-api/users    
+Content-Type: application/json    
+
+{   
+    "username":"yesh",
+    "password":"yesh06",
+    "email" : "yesh@gmail.com",
+    "age":13
+}
+###read all users 
+GET http://localhost:4000/user-api/users
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzaGFAZ21haWwuY29tIiwiaWF0IjoxNzcyODc4MTc1LCJleHAiOjE3NzI4NzgyNzV9.WxkB38poz8NAktJipwVCqP*4
+.
+ 3bws9vN4t3gn-uohpmc3w; Path=/; HttpOnly; SameSite=Lax
+
+###update the user
+PUT  http://localhost:4000/user-api/users 
+Content-Type: application/json
+
+{
+     "username":"mani",
+    "password":"uma6",
+    "email":"uma@gmail.com",
+    "age":21
+}
+
+
+
+
+### user login
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{   
+    "password":"yesh06",
+    "email":"yesh@gmail.com"
+    
+}
+### update the user login
+PUT http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "password":"mani@1234",
+    "email": "mani@gmail.com"
+}
+
+
+###  //TO SEPERATE THE REQUEST
+
+PUT http://localhost:4000/user-api/users/69aa767aad6ad394de06d101
+Content-Type: application/json
+
+{
+    "username":"mani",
+    "password":"mani2006",
+    "email":"mani05@gmail.com",
+    "age":19
+}
+
+### delete a user by id
+###  //TO SEPERATE THE REQUEST
+DELETE http://localhost:4000/user-api/users/69aa93d7dc7ecefe2d6fc875
+
+
+### //product appilication
+
+### read all products
+GET http://localhost:4000/product-api/product
+
+### read products by productid
+GET http://localhost:4000/product-api/product/101
+
+###create new product
+POST http://localhost:4000/product-api/product
+Content-Type: application/json
+
+{
+    "productId":101,
+    "productName":"computer",
+    "price":40000,
+    "brand":"hi"
+}
+ 
+### update a product based id
+PUT http://localhost:4000/product-api/product/102
+Content-Type: application/json
+
+{
+    "productId":105,
+    "productName":"Tab",
+    "brand":"Hp",
+    "price":41000
+}
+
+### delete a product by id
+DELETE http://localhost:4000/product-api/product/101
+
